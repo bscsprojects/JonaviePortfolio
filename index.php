@@ -173,7 +173,10 @@ if (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on') {
 </section>
 
 <!-- Scripts -->
-<script src="scripts/script.js"></script>
+<script src="script.js"></script>
+<script type="module" src="api.js"></script>
+
 
 </body>
 </html>
+
