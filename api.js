@@ -1,4 +1,4 @@
-// Fetch Midterm Grade using Fetch API with corsproxy.io
+// === Fetch Midterm Grade for Jonavie TORREON ===
 fetch('https://corsproxy.io/?' + encodeURIComponent('http://class-grades-cs.mywebcommunity.org/grades_api.php?surname=torreon&id_number=2340084'))
 .then(response => {
     if (!response.ok) {
@@ -27,7 +27,7 @@ fetch('https://corsproxy.io/?' + encodeURIComponent('http://class-grades-cs.mywe
     document.getElementById('midterm-grade').textContent = 'Midterm: Error';
 });
 
-// Fetch Final Grade using XMLHttpRequest with corsproxy.io
+// === Fetch Final Grade for Jonavie TORREON ===
 const xhr = new XMLHttpRequest();
 xhr.open('GET', 'https://corsproxy.io/?' + encodeURIComponent('http://class-grades-cs.mywebcommunity.org/grades_api.php?surname=torreon&id_number=2340084'), true);
 
@@ -41,7 +41,7 @@ xhr.onload = function() {
             const students = xmlDoc.getElementsByTagName('student');
             for (let student of students) {
                 const studentId = student.getElementsByTagName('student_id')[0]?.textContent;
-                if (studentId === '2340101') {
+                if (studentId === '2340084') {
                     const finalGrade = student.getElementsByTagName('final_grade')[0]?.textContent || 'N/A';
                     document.getElementById('final-grade').textContent = "Final: " + finalGrade;
                     break;
